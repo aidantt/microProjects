@@ -22,6 +22,5 @@ fn main() {
     // but it cleanly represents a singular control flow case with less boilerplate
     // and less syntax.
     // if let can also give an else {} case as a control flow for the catch-all in 
-    // a binary case:
-    let mut count = 0; // define count as i32 at 0 that can change value
+    // a binary case.
 }
