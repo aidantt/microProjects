@@ -25,8 +25,31 @@ fn user_input() -> Vec<i32> {
         // otherwise, unwrap the Result and pass forwards
         .expect("Panic! failed to read user input");
 
+    // make a vector that separates the string by comma
+    let vec_string: Vec<&str> = string_list.trim()
+        // split by comma
+        .split(',')
+        // assemble into a list of Strings
+        .collect();
+
+    // using the vector array of number characters, type cast into
+    // the returned vector as i32
+    let mut vec_int: Vec<i32> = Vec::new();
+    for i in &vec_string {
+        // parse character into integer and unwrap Result
+        let integer: i32 = i.parse::<i32>().unwrap();
+        // push into return vector
+        vec_int.push(integer);
+    }
+
     // TEST: print output string
     println!("Your input: {}", &string_list);
+
+    // TEST: print split string
+    println!("split string: {:?}", vec_string);
+
+    // TEST: print integer vector
+    println!("integer vector is: {:?}", vec_int);
 
     // TEST: return empty Vec
     Vec::new()
