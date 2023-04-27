@@ -51,8 +51,21 @@ fn user_input() -> Vec<i32> {
     // TEST: print integer vector
     println!("integer vector is: {:?}", vec_int);
 
-    // TEST: return empty Vec
-    Vec::new()
+    // Return the integer vector list
+    vec_int
+}
+
+fn find_median(mut list: &Vec<i32>) -> i32 {
+    // Given a list of integers, sort and find the median
+
+    // TEST: print passed list
+    println!("passed list is: {:?}", list);
+
+    // sort the list numerically
+    list.sort();
+
+    // TEST: return dummy integer
+    1
 }
 
 fn main() {
@@ -60,5 +73,8 @@ fn main() {
 
     // first, use a function that takes no parameters and returns
     // the vector array
-    let list = user_input();
+    let list: Vec<i32> = user_input();
+
+    // pass the vec list to functions that calculate the median and mode
+    let median = find_median(&list);
 }
